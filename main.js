@@ -1,6 +1,5 @@
 angular.module('todoApp', [])
-  .controller('toDoController', ['$scope', function() {
-    $scope.tododo = 4;
+  .controller('toDoController', function($scope) {
     $scope.tasks = [
       {
       text: 'take out the dog'
@@ -9,9 +8,21 @@ angular.module('todoApp', [])
     }
     ];
 
+    $scope.completedTasks = [
+      {
+      text: 'do homework'
+    },{
+      text: 'run a mile'
+    }
+  ];
+
+
     $scope.addTask = function() {
-      $scope.tasks.push(text:$scope.taskText);
+      $scope.tasks.push({text:$scope.taskText});
       $scope.taskText ='';
     }
 
-  }]);
+    $scope.checked = function(){
+        $scope.completedTasks.push({text:$scope.task.text});
+    }
+  });

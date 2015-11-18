@@ -6,17 +6,24 @@
   <body>
     <div ng-controller="toDoController">
 
-      <h2>Things to do</h2>
-      <p>{{tododo}}</p>
+      <h1>Things to do</h1>
 
         <ul ng-repeat="task in tasks">
-          <li>{{tasks.text}}</li>
+
+          <p><input type="checkbox" ng-model="checked()">{{task.text}}</p>
+
         </ul>
 
       <form>
-          <input type="text" ng-model="taskText" placeholder="Enter Task" required /><br />
+          <input type="text" ng-model="taskText" placeholder="Enter Task" required />
           <input type="submit" ng-click="addTask()" value="Enter" />
       </form>
+
+      <h2>Completed Tasks</h2>
+
+      <ul ng-repeat="completed in completedTasks">
+          <p style="text-decoration: line-through;"><input type="checkbox" checked>{{completed.text}}</p>
+      </ul>
 
     </div>
 
