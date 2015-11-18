@@ -1,0 +1,25 @@
+<!doctype html>
+<html ng-app="todoApp">
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+  </head>
+  <body>
+    <div ng-controller="toDoController">
+
+      <h2>Things to do</h2>
+      <p>{{tododo}}</p>
+
+        <ul ng-repeat="task in tasks">
+          <li>{{tasks.text}}</li>
+        </ul>
+
+      <form>
+          <input type="text" ng-model="taskText" placeholder="Enter Task" required /><br />
+          <input type="submit" ng-click="addTask()" value="Enter" />
+      </form>
+
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
